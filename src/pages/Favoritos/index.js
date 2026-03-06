@@ -11,9 +11,20 @@ function Favoritos(){
         setFilmes(JSON.parse(minhaLista) || [])
     },[])
 
+    function excluirFilme(id){
+        let filtroFilmes = filmes.filter((filme) =>{
+            return(filme.id !== id)
+        })
+
+        setFilmes(filtroFilmes)
+        localStorage.setItem("@desiflix", JSON.stringify(filtroFilmes))
+    }
+
     return(
         <div className="meus-filmes">
             <h1>Minha lista de filmes</h1>
+
+            {filmes.length === 0 && <span>Você ainda não possui filmes salvos :( </span>}
             
             <ul>
                 {filmes.map((filme) => {
@@ -22,7 +33,7 @@ function Favoritos(){
                             <span>{filme.title}</span>
                             <div>
                                 <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
-                                <button>Excluir</button>
+                                <button onClick={()=> excluirFilme(filme.id)}>Excluir</button>
                             </div>
                         </li>
                     )

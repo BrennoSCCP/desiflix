@@ -1,42 +1,116 @@
 
 
-
-.meus-filmes{
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.meus-filmes h1{
+.container {
+    background-color: rgb(15, 15, 15);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.meus-filmes {
+    max-width: 800px;
+    margin: 14px auto;
+    padding: 20px;
+}
+
+.meus-filmes h1 {
     margin-bottom: 14px;
+    text-align: center;
+    font-size: 22px;
 }
 
-.meus-filmes span{
+.meus-filmes span {
     margin-right: 18px;
 }
 
-.meus-filmes ul{
-    width: 720px;
+.meus-filmes ul {
+    width: 100%;
 }
 
-.meus-filmes ul li{
+.meus-filmes ul li {
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
-
+    background-color: rgb(15, 15, 15);
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.meus-filmes div{
+
+
+.meus-filmes ul li button {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(15, 15, 15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* delete button special color */
+.meus-filmes ul li .btn-excluir {
+    background-color: #c0392b;
+    border-color: #992d22;
+}
+.meus-filmes ul li .btn-excluir:hover {
+    background-color: #e74c3c;
+}
+
+/* action container flex to equalize button/link width */
+.meus-filmes ul li div {
+    display: flex;
+    gap: 10px;
+}
+
+.meus-filmes ul li div > * {
+    flex: 1 1 120px;       /* grow/shrink equally, prefer 120px */
+    max-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.meus-filmes ul li button:hover {
+    background-color: rgb(46, 46, 46);
+}
+
+.meus-filmes div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.meus-filmes div a{
+.meus-filmes div a {
     text-decoration: none;
-    color: #116feb;
+    color: #f0f2f4;
     margin-right: 14px;
+}
+
+.button-acoes{
+    display: inline-block;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(15, 15, 15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.button-acoes:hover {
+    background-color: rgb(46, 46, 46);
 }
